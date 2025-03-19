@@ -1,2 +1,2 @@
-
-export class NasaIOException extends Error {}
+export class NasaIOException extends Error {
+}

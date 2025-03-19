@@ -13,4 +13,5 @@ import {NasaPictureController} from "./nasa.picture.controller";
     ],
     controllers: [NasaPictureController],
 })
-export class NasaPictureModule {}
+export class NasaPictureModule {
+}

@@ -1,4 +1,3 @@
-
 export class NasaPicture {
     constructor(
         public date: string,
@@ -6,7 +5,8 @@ export class NasaPicture {
         public title: string,
         public url: string,
         public id: string
-    ) {}
+    ) {
+    }
 
     validate(): void {
         if (!this.date || !this.explanation || !this.title || !this.url || !this.id) {
