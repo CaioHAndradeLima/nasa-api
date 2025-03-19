@@ -1,6 +1,6 @@
 
-class InvalidResponseCodeException extends Error {
+export class InvalidResponseCodeException extends Error {
     constructor(public code: number) {
-        super()
+        super("invalid response code ${code}")
     }
 }

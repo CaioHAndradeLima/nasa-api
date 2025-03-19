@@ -3,6 +3,7 @@ import {NasaRepository} from "src/infrastructure/nasa_picture_repository";
 import {ResultApi} from "src/domain/result_api";
 import {NasaPicture} from "src/domain/nasa_picture";
 import {NasaIOException} from "src/exception/nasa_io_exception";
+import {InvalidResponseCodeException} from "../exception/invalid_response_code_exception";
 
 jest.mock("axios");
 
@@ -34,7 +35,9 @@ describe("NasaRepository", () => {
 
         expect(result).toBeInstanceOf(ResultApi);
         expect(result.body).toHaveLength(1);
-        expect(result.body).toBeInstanceOf(NasaPicture);
+        expect(result.body).toBeInstanceOf(Array);
+        expect(result.body?.at(0)).toBeInstanceOf(NasaPicture);
+        expect(result.body?.at(0)?.date).toEqual("2025-03-19");
         expect(result.error).toBeUndefined();
     });
 

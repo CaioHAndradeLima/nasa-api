@@ -4,6 +4,7 @@ import {v4 as uuidV4} from "uuid";
 import {NasaIOException} from "../exception/nasa_io_exception";
 import {ResultApi} from "../domain/result_api";
 import {Injectable} from "@nestjs/common";
+import {InvalidResponseCodeException} from "../exception/invalid_response_code_exception";
 
 @Injectable()
 export class NasaRepository {
