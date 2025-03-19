@@ -8,7 +8,6 @@ import {NasaPictureController} from "../presentation/nasa.picture.controller";
 import {Presentation} from "../application/presentation";
 import {toPresentation} from "../application/presentation.convert";
 
-// Mock dependencies
 describe('NasaPictureController', () => {
     let controller: NasaPictureController;
     let fetchPicturesUseCase: jest.Mocked<FetchNasaPicturesUseCase>;
@@ -67,19 +66,15 @@ describe('NasaPictureController', () => {
     });
 
     it('should handle errors gracefully', async () => {
-        // Mock the service call to throw an error
         fetchPicturesUseCase.invoke.mockRejectedValue(new Error('Something went wrong'));
 
-        // Simulate the HTTP request and response
         const response = {
             status: jest.fn().mockReturnThis(),
             json: jest.fn().mockReturnThis(),
         } as unknown as Response;
 
-        // Call the controller method
         await controller.create({} as any, response);
 
-        // Verify that the response status is INTERNAL_SERVER_ERROR
         expect(response.status).toHaveBeenCalledWith(HttpStatus.INTERNAL_SERVER_ERROR);
     });
 });
