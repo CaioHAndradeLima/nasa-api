@@ -7,10 +7,4 @@ export class NasaPicture {
         public id: string
     ) {
     }
-
-    validate(): void {
-        if (!this.date || !this.explanation || !this.title || !this.url || !this.id) {
-            throw new Error("All fields are required");
-        }
-    }
 }
