@@ -1,10 +1,10 @@
 import axios from "axios";
-import {NasaPicture} from "../domain/nasa_picture";
+import {NasaPicture} from "../domain/nasa.picture";
 import {v4 as uuidV4} from "uuid";
-import {NasaIOException} from "../exception/nasa_io_exception";
-import {ResultApi} from "../domain/result_api";
+import {NasaIOException} from "../exception/nasa.io.exception";
+import {ResultApi} from "../domain/result.api";
 import {Injectable} from "@nestjs/common";
-import {InvalidResponseCodeException} from "../exception/invalid_response_code_exception";
+import {InvalidResponseCodeException} from "../exception/invalid.response.code.exception";
 
 @Injectable()
 export class NasaRepository {

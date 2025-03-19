@@ -1,9 +1,9 @@
 import axios from "axios";
-import {NasaRepository} from "src/infrastructure/nasa_picture_repository";
-import {ResultApi} from "src/domain/result_api";
-import {NasaPicture} from "src/domain/nasa_picture";
-import {NasaIOException} from "src/exception/nasa_io_exception";
-import {InvalidResponseCodeException} from "../exception/invalid_response_code_exception";
+import {NasaRepository} from "src/infrastructure/nasa.picture.repository";
+import {ResultApi} from "src/domain/result.api";
+import {NasaPicture} from "src/domain/nasa.picture";
+import {NasaIOException} from "src/exception/nasa.io.exception";
+import {InvalidResponseCodeException} from "../exception/invalid.response.code.exception";
 
 jest.mock("axios");
 

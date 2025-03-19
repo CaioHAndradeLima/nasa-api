@@ -1,7 +1,7 @@
 import {Presentation} from "../application/presentation";
 import {Response} from "express";
 import {HttpStatus} from "@nestjs/common";
-import {NasaIOException} from "../exception/nasa_io_exception";
+import {NasaIOException} from "../exception/nasa.io.exception";
 
 export function toRequest<T>(res: Response, presentation: Presentation<T>): Response {
     if(presentation.hasError()) {

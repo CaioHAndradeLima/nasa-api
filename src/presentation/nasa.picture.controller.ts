@@ -1,7 +1,7 @@
 import {Controller, Get, Req, Res, HttpStatus} from "@nestjs/common";
 import {Response} from 'express';
-import {FetchNasaPicturesUseCase} from "../application/fetch_nasa_pictures_use_case";
-import {toRequest} from "./request_convert";
+import {FetchNasaPicturesUseCase} from "../application/fetch.nasa.pictures.use.case";
+import {toRequest} from "./request.convert";
 
 @Controller('picture')
 export class NasaPictureController {

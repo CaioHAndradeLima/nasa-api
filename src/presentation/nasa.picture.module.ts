@@ -1,7 +1,7 @@
 import {Module} from "@nestjs/common";
-import {FetchNasaPicturesUseCase} from "../application/fetch_nasa_pictures_use_case";
-import {NasaRepository} from "../infrastructure/nasa_picture_repository";
-import {NasaPictureController} from "./nasa_picture_controller";
+import {FetchNasaPicturesUseCase} from "../application/fetch.nasa.pictures.use.case";
+import {NasaRepository} from "../infrastructure/nasa.picture.repository";
+import {NasaPictureController} from "./nasa.picture.controller";
 
 @Module({
     imports: [],
