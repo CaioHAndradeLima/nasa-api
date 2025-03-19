@@ -7,11 +7,9 @@ import {Injectable} from "@nestjs/common";
 
 @Injectable()
 export class NasaRepository {
-    private apiUrl = "https://api.nasa.gov/planetary/apod?count=16&api_key=Gv5aQ2LgrOR0SZ08nEpRDpajMPvjLLjzYG9R51K7";
-
     async findPictures(): Promise<ResultApi<NasaPicture[]>> {
         try {
-            const response = await axios.get(this.apiUrl);
+            const response = await axios.get(process.env.NASA_URL as string);
 
             if (response.status !== 200) {
                 return new ResultApi<NasaPicture[]>(
