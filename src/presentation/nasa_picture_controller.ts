@@ -1,7 +1,7 @@
 import {Controller, Get, Req, Res, HttpStatus} from "@nestjs/common";
-import {FetchNasaPicturesUseCase} from "@/application/fetch_nasa_pictures_use_case";
 import {Response} from 'express';
-import {toRequest} from "@/presentation/request_convert";
+import {FetchNasaPicturesUseCase} from "../application/fetch_nasa_pictures_use_case";
+import {toRequest} from "./request_convert";
 
 @Controller('picture')
 export class NasaPictureController {
@@ -20,7 +20,7 @@ export class NasaPictureController {
             return toRequest(
                 response, await this.fetchPicturesUseCase.invoke()
             )
-        } catch (exception) {
+        } catch (exception: any) {
             return response.status(HttpStatus.INTERNAL_SERVER_ERROR).json();
         }
     }

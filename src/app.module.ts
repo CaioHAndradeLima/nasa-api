@@ -1,6 +1,6 @@
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
-import {NasaPictureModule} from "@/presentation/nasa_picture_module";
+import {NasaPictureModule} from "./presentation/nasa_picture_module";
 
 @Module({
     imports: [

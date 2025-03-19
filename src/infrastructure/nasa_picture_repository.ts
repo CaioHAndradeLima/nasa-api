@@ -1,12 +1,13 @@
 import axios from "axios";
-import {NasaPicture} from "@/domain/nasa_picture";
+import {NasaPicture} from "../domain/nasa_picture";
 import {v4 as uuidV4} from "uuid";
-import {NasaIOException} from "@/exception/nasa_io_exception";
-import {ResultApi} from "@/domain/result_api";
+import {NasaIOException} from "../exception/nasa_io_exception";
+import {ResultApi} from "../domain/result_api";
 import {Injectable} from "@nestjs/common";
 
 @Injectable()
 export class NasaRepository {
+
     async findPictures(): Promise<ResultApi<NasaPicture[]>> {
         try {
             const response = await axios.get(process.env.NASA_URL as string);
