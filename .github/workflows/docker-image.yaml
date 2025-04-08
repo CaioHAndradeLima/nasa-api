@@ -66,8 +66,10 @@ jobs:
 
       - name: Register ECS Task Definition
         id: register-task
-        uses: aws-actions/amazon-ecs-register-task-definition@v1
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
+          service: nasa
+          cluster: nasa
           task-definition: filled-task-def.json
 
       - name: Deploy to ECS
