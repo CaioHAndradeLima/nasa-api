@@ -56,3 +56,23 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
           ECR_REPOSITORY: nasa
+
+      - name: Fill in ECS Task Definition JSON
+        id: task-def
+        run: |
+          VERSION=${{ steps.get-version.outputs.version }}
+          sed "s|<version>|$VERSION|g" .github/nasa-task.json > filled-task-def.json
+          cat filled-task-def.json
+
+      - name: Register ECS Task Definition
+        id: register-task
+        uses: aws-actions/amazon-ecs-register-task-definition@v1
+        with:
+          task-definition: filled-task-def.json
+
+      - name: Deploy to ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          cluster: nasa-cluster
+          service: nasa-service
+          task-definition: ${{ steps.register-task.outputs.task-definition-arn }}
