@@ -61,7 +61,7 @@ jobs:
         id: task-def
         run: |
           VERSION=${{ steps.get-version.outputs.version }}
-          sed "s|<version>|$VERSION|g" .github/nasa-task.json > filled-task-def.json
+          sed "s|<version>|$VERSION|g" ../nasa-task.json > filled-task-def.json
           cat filled-task-def.json
 
       - name: Register ECS Task Definition
