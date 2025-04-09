@@ -64,10 +64,11 @@ jobs:
           sed "s|<version>|$VERSION|g; s|<ECR_REGISTRY>|$ECR_REGISTRY|g" .github/workflows/nasa-task.json > filled-task-def.json
           cat filled-task-def.json
 
-      - name: Register ECS Task Definition
-        id: register-task
-        uses: aws-actions/amazon-ecs-register-task-definition@v1
+      - name: Deploy to ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
+          cluster: nasa-cluster
+          service: nasa-service
           task-definition: filled-task-def.json
 
       - name: Deploy to ECS
