@@ -8,7 +8,7 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: nasa
-  ECS_SERVICE: nasa
+  ECS_SERVICE: nasa-service
   ECS_CLUSTER: nasa
   ECS_TASK_DEFINITION: .aws/task-definition.json
   CONTAINER_NAME: "nasa"
