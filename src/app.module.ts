@@ -1,6 +1,7 @@
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
-import {NasaPictureModule} from "./presentation/nasa.picture.module";
+import {NasaPictureModule} from "./presentation/picture/nasa.picture.module";
+import {HealthModule} from "./presentation/health/health.module";
 
 @Module({
     imports: [
@@ -8,7 +9,7 @@ import {NasaPictureModule} from "./presentation/nasa.picture.module";
             envFilePath: '.env',
             isGlobal: true,
         }),
-        NasaPictureModule,
+        NasaPictureModule, HealthModule,
     ],
     controllers: [],
     providers: [],
