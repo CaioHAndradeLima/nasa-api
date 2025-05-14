@@ -19,7 +19,7 @@ Nasa Api
 
 ## Deploy structure
 
-you can do the deployment on AWS EC2 service through GitHub actions. after a merge into main branch the CI will start and make a new deployment to EC2 AWS
+you can do the deployment on AWS EC2 service through GitHub actions. after a merge into main branch you can go to actions section and run a new deployment process to EC2 AWS
 
 ## Run locally
 
