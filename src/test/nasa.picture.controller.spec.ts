@@ -4,9 +4,9 @@ import {Response} from 'express';
 import {HttpStatus} from '@nestjs/common';
 import {NasaPicture} from '../domain/nasa.picture';
 import {NasaRepository} from '../infrastructure/nasa.picture.repository';
-import {NasaPictureController} from "../presentation/nasa.picture.controller";
 import {Presentation} from "../application/presentation";
 import {toPresentation} from "../application/presentation.convert";
+import {NasaPictureController} from "../presentation/picture/nasa.picture.controller";
 
 describe('NasaPictureController', () => {
     let controller: NasaPictureController;
