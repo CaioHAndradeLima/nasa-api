@@ -21,6 +21,10 @@ Nasa Api
 
 you can do the deployment on AWS EC2 service through GitHub actions. after a merge into main branch you can go to actions section and run a new deployment process to EC2 AWS
 
+## Architecture organization
+
+Presentation <-> UseCase <-> Repository
+
 ## Run locally
 
 ```bash
